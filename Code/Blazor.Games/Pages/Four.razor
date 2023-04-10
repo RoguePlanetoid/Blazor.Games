@@ -1,0 +1,15 @@
+﻿@page "/four"
+@inject FourInRow fourInRow;
+
+<PageTitle>Four in Row</PageTitle>
+
+<h1>Four in Row</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@fourInRow.New">New</button> @fourInRow.Message</h2>
+            <Output Value="@fourInRow.Display" Clicked="@fourInRow.Click" />
+        </div>
+    </div>
+</div>

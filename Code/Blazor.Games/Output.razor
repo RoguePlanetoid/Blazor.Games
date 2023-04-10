@@ -1,0 +1,23 @@
+﻿@for(int row = 0; row < Value.Rows.Count; row++)
+{
+    <div class="row m-2">
+        @for (int col = 0; col < Value.Rows[row].Columns.Count; col++)
+        {
+
+            var position = new Position(row, col);
+            <div class="col-sm text-center" @onclick="@(() => Clicked.InvokeAsync(position))">
+                <Graphic AssetResource="@Value.Rows[row].Columns[col].Asset?.ToAssetResource()" />
+                <span class="badge rounded-pill bg-primary">@Value.Rows[row].Columns[col].Message</span>
+            </div>
+        }
+    </div>
+}
+
+@code
+{
+    [Parameter]
+    public Display Value { get; set; } = new();
+
+    [Parameter]
+    public EventCallback<Position> Clicked { get; set; } = new();
+}

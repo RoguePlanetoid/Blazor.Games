@@ -1,0 +1,15 @@
+﻿@page "/fruit"
+@inject FruitGame fruitGame;
+
+<PageTitle>Fruit Game</PageTitle>
+
+<h1>Fruit Game</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@fruitGame.New">New</button> @fruitGame.Message</h2>
+            <Output Value="@fruitGame.Display" Clicked="@fruitGame.Click" />
+        </div>
+    </div>
+</div>

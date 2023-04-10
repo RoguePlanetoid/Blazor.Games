@@ -1,0 +1,17 @@
+﻿@page "/rock"
+@inject RockPaperScissors rockPaperScissors;
+
+<PageTitle>Rock, Paper, Scissors</PageTitle>
+
+<h1>Rock, Paper, Scissors</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@rockPaperScissors.New">New</button> @rockPaperScissors.PlayerMessage</h2>
+            <Output Value="@rockPaperScissors.Player" Clicked="@rockPaperScissors.Click" />
+            <h2>@rockPaperScissors.ComputerMessage</h2>
+            <Output Value="@rockPaperScissors.Computer" />
+        </div>
+    </div>
+</div>
