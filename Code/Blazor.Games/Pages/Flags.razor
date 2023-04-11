@@ -1,0 +1,15 @@
+﻿@page "/flags"
+@inject FlagsGame flagsGame;
+
+<PageTitle>Flags Game</PageTitle>
+
+<h1>Flags Game</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@flagsGame.New">New</button> @flagsGame.Message</h2>
+            <Output Value="@flagsGame.Display" Clicked="@flagsGame.Click" />
+        </div>
+    </div>
+</div>

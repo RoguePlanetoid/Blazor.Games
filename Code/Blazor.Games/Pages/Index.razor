@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject TicTacToe ticTacToe;
+
+<PageTitle>Tic Tac Toe</PageTitle>
+
+<h1>Tic Tac Toe</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@ticTacToe.New">New</button> @ticTacToe.Message</h2>
+            <Output Value="@ticTacToe.Display" Clicked="@ticTacToe.Click" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@page "/hit"
+@inject HitOrMiss hitOrMiss;
+
+<PageTitle>Hit or Miss</PageTitle>
+
+<h1>Hit or Miss</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@hitOrMiss.New">New</button> @hitOrMiss.Message</h2>
+            <Output Value="@hitOrMiss.Display" Clicked="@hitOrMiss.Click" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Blazor Games</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.HollowRedCircle)" />
+                </span>
+                Tic Tac Toe
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="memory">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.NewMoon)" />
+                </span>
+                Memory Game
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="hit">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.Collision)" />
+                </span>
+                Hit or Miss
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="four">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.YellowCircle)" />
+                </span>
+                Four in Row
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="rock">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.Rock)" />
+                </span>
+                Rock, Paper, Scissors
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="fruit">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.Tangerine)" />
+                </span>
+                Fruit Game
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="emoji">
+                <span class="oi m-1">
+                    <Graphic AssetResource="ShadedFluentEmoji.Get(FluentEmojiType.SmilingFace)" />
+                </span>
+                Emoji Game
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="flags">
+                <span class="oi m-1">
+                    <Graphic AssetResource="Flag.Get(FlagSet.Square, FlagType.France)" />
+                </span>
+                Flags Game
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

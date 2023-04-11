@@ -1,0 +1,21 @@
+﻿@page "/memory"
+@inject MemoryGame memoryGame;
+
+<PageTitle>Memory Game</PageTitle>
+
+<h1>Memory Game</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2><button class="btn btn-primary" @onclick="@memoryGame.New">New</button> @memoryGame.Message</h2>
+            <Output Value="@memoryGame.Display" Clicked="@memoryGame.Click" />
+        </div>
+    </div>
+</div>
+@code
+{
+    protected override void OnInitialized() =>
+        memoryGame.Updated = () =>
+            this.StateHasChanged();
+}
