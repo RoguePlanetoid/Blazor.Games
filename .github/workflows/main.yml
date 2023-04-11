@@ -10,13 +10,13 @@ jobs:
     steps:
      # uses GitHub's checkout action to checkout code form the master branch
      - uses: actions/checkout@v2
-     # sets up .NET Core SDK 7.0
-     - name: Setup .NET Core SDK
+     # sets up .NET SDK 7.0
+     - name: Setup .NET 7 SDK
        uses: actions/setup-dotnet@v1
        with:
-         dotnet-version: 7.0.0
+         dotnet-version: 7.0.4
      # publishes Blazor project to the release-folder
-     - name: Publish .NET 7.0 Project
+     - name: Publish .NET 7 Project
        run: dotnet publish Blazor.Games/Blazor.Games.csproj -c Release -o release --nologo
      - name: Commit wwwroot to GitHub Pages
        uses: JamesIves/github-pages-deploy-action@3.7.1
